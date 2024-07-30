@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    justify-content: space-between;
+}
+
+.navbar-search-form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid black;
+    width: 200px;
+    border-radius: 8px;
+    background-color: rgb(217, 221, 223);
+    padding: 5px;
+}
+
+.navbar-input{
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.navbar-controls{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-controls-icons {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-icon{
+    width: 30px;
+    height: 30px;
+}
