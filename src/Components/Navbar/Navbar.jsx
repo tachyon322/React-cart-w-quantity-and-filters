@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { IoSearchOutline as SearchIcon } from "react-icons/io5";
 import { CiHeart as HeartIcon } from "react-icons/ci";
 import { CiShoppingCart as ShoppingCartIcon } from "react-icons/ci";
 import { CiUser as UserIcon } from "react-icons/ci";
 
-export default function Navbar() {
+export default function Navbar({ value, setValue }) {
+
   return (
     <nav className='navbar wide-wrap'>
       <form className='navbar-search-form' action="">
@@ -13,7 +14,11 @@ export default function Navbar() {
 
         <input className='navbar-input'
             type="text"
-            placeholder='find some shoes...' />
+            placeholder='find some shoes...'
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+             />
+        <span onClick={() => setValue("")}>X</span>
       </form>
 
 

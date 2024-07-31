@@ -16,6 +16,10 @@
     padding: 5px;
 }
 
+.navbar-search-form span{
+    cursor: pointer;
+}
+
 .navbar-input{
     border: none;
     outline: none;

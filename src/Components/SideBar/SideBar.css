@@ -66,3 +66,15 @@ input[type="radio"] {
 .radio-category label{
     text-transform: capitalize;
 }
+
+.sidebar-button-reset{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color: rgb(217, 221, 223);
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+}
