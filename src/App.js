@@ -38,15 +38,22 @@ function App() {
         setSelectedPriceFrom={setSelectedPriceFrom}
         setSelectedPriceTo={setSelectedPriceTo}
         setSelectedColor={setSelectedColor}
-      ></SideBar>
+      />
+
       <div className="something">
-        <Navbar value={value} setValue={setValue}></Navbar>
-        <Product handleClick={handleClick} cart={cart} value={value}
+        <Navbar value={value} setValue={setValue}/>
+
+        <Product 
+          handleClick={handleClick} cart={cart} value={value}
+          setCart={setCart}
+
+
+          // фильтры сортировки
           selectedType={selectedType} 
           selectedPriceFrom={selectedPriceFrom}
           selectedPriceTo={selectedPriceTo} 
           selectedColor={selectedColor}
-        ></Product> {/* Передаем карт */}
+        />
       </div>
     </div>
   );

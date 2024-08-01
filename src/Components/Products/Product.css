@@ -47,3 +47,20 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+.product-card-quantity{
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+    align-items: center;
+}
+
+.quantity-btn{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(217, 221, 223);
+    font-size: 20px;
+}

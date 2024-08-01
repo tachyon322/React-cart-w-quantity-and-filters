@@ -15,6 +15,7 @@ export default function SideBar({ setSelectedType, setSelectedPriceFrom, setSele
     setSelectedPriceFrom(0);
     setSelectedPriceTo(1000);
     setSelectedColor("");
+    window.location.reload();
   }
 
   return (
