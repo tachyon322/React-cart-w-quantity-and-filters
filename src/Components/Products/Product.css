@@ -5,8 +5,8 @@
 }
 
 .product-card{
-    width: 200px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border: 1px solid black;
     border-radius: 8px;
 }
@@ -18,16 +18,16 @@
 }
 
 .product-img{
-    width: 190px;
-    height: 100px;
+    width: 220px;
+    height: 120px;
 }
 
 .product-card-info{
     display: flex;
     height: 100px;
     flex-direction: column;
-    justify-content: space-between;
     padding: 0 5px;
+    margin-top: 30px;
 }
 
 .product-card-buy{

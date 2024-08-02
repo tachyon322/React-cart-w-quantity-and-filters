@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { IoSearchOutline as SearchIcon } from "react-icons/io5";
 import { CiHeart as HeartIcon } from "react-icons/ci";
@@ -24,7 +25,10 @@ export default function Navbar({ value, setValue }) {
 
       <div className="navbar-controls">
         <HeartIcon className='navbar-controls-icons navbar-heart-icon' />
-        <ShoppingCartIcon className='navbar-controls-icons navbar-shopping-cart-icon' />
+        <Link to={"/cart"}>
+          <ShoppingCartIcon className='navbar-controls-icons navbar-shopping-cart-icon' />
+        </Link>
+
         <UserIcon className='navbar-controls-icons navbar-user-icon' />
       </div>
     </nav>

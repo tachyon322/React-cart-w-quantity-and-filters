@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
+import { useCart } from "./../Hooks/useBuy";
 import "./Product.css";
 import { data } from "./data";
 
 export default function Product({
   handleClick,
-  cart,
   value,
   setCart,
   selectedType,
@@ -13,36 +13,8 @@ export default function Product({
   selectedPriceTo,
   selectedColor,
 }) {
-  function quantityHandleAdd(item) {
-    const newCart = [...cart];
-    const exists = newCart.find((cartItem) => cartItem.title === item.title);
 
-    if (!exists) {
-      newCart.push({ ...item, quantity: 1 });
-      setCart(newCart);
-      window.localStorage.setItem("cart", JSON.stringify(newCart));
-    } else {
-      exists.quantity += 1; // Увеличиваем существующее количество
-      setCart(newCart);
-      window.localStorage.setItem("cart", JSON.stringify(newCart));
-    }
-  }
-
-  function quantityHandleRemove(item) {
-    const newCart = [...cart];
-    const exists = newCart.find((cartItem) => cartItem.title === item.title);
-
-    if (exists) {
-      exists.quantity -= 1; // Уменьшаем существующее количество
-      if (exists.quantity === 0) {
-        newCart.splice(newCart.indexOf(exists), 1);
-        setCart(newCart);
-        window.localStorage.setItem("cart", JSON.stringify(newCart));
-      }
-      setCart(newCart);
-      window.localStorage.setItem("cart", JSON.stringify(newCart));
-    }
-  }
+  const { cart, quantityHandleAdd, quantityHandleRemove } = useCart();
 
   const filteredData = data
     .filter((item) => item.title.toLowerCase().includes(value.toLowerCase())) // Фильтрация по названию
@@ -85,7 +57,7 @@ export default function Product({
               <div className="product-card-buy">
                 <h3>${item.newPrice}</h3>
                 <button 
-                  onClick={() => handleClick(item)}
+                  onClick={() => quantityHandleAdd(item)}
                   disabled={quantity > 0}>buy</button>
               </div>
               {quantity > 0 && (
