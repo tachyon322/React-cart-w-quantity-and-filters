@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import "./App.css";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
+import SingleProductPage from "./Pages/SingleProductPage";
 
 function App() {
   // состояния для фильтров
@@ -44,6 +45,7 @@ function App() {
             setSelectedColor={setSelectedColor}
           />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<SingleProductPage />} />
         </Routes>
       </Router>
     </>

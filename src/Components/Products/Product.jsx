@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useCart } from "./../Hooks/useBuy";
+import { Link } from "react-router-dom";
 import "./Product.css";
 import { data } from "./data";
 
@@ -47,7 +48,9 @@ export default function Product({
         return (
           <div className="product-card" key={key}>
             <div className="product-card-img">
-              <img className="product-img" src={item.img} alt="product img" />
+              <Link to={`/product/${item.id}`}>
+                <img className="product-img" src={item.img} alt="product img" />
+              </Link>
             </div>
             <div className="product-card-info">
               <div>
