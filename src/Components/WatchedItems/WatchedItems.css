@@ -1,0 +1,10 @@
+.watched-splide-root {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.watched-item__img {
+    width: 180px;
+    height: 100px;
+  }

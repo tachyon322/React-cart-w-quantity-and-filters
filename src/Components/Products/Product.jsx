@@ -15,7 +15,7 @@ export default function Product({
   selectedColor,
 }) {
 
-  const { cart, quantityHandleAdd, quantityHandleRemove } = useCart();
+  const { cart, quantityHandleAdd, quantityHandleRemove, markAsWatched } = useCart();
 
   const filteredData = data
     .filter((item) => item.title.toLowerCase().includes(value.toLowerCase())) // Фильтрация по названию
@@ -48,7 +48,8 @@ export default function Product({
         return (
           <div className="product-card" key={key}>
             <div className="product-card-img">
-              <Link to={`/product/${item.id}`}>
+              <Link to={`/product/${item.id}`}
+                onClick={() => markAsWatched(item)}>
                 <img className="product-img" src={item.img} alt="product img" />
               </Link>
             </div>

@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useCart } from '../Hooks/useBuy';
 import './SingleProduct.css'
+import { Link } from 'react-router-dom';
 import { RxExternalLink as LinkIcon } from "react-icons/rx";
 import { data } from '../Products/data';
 import { useParams } from 'react-router-dom'
+import WatchedItems from '../WatchedItems/WatchedItems';
 
 export default function SingleProduct() {
     const {cart, quantityHandleAdd} = useCart();
@@ -31,7 +33,9 @@ export default function SingleProduct() {
 
   return (
     <div className='single-product-root'>
-      <h1>SingleProduct</h1>
+      <Link to={"/home"}>
+        <h1>SingleProduct</h1>
+      </Link>
 
       <div className="sproduct-container">
         <img className='single-product-img' src={product.img} alt="" />
@@ -55,6 +59,8 @@ export default function SingleProduct() {
           </div>
         </div>
       </div>
+
+      <WatchedItems />
     </div>
   )
 }
